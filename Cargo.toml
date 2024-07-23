@@ -1,0 +1,27 @@
+[package]
+name = "tari-rpc"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+argon2 = { version = "0.5.3", features = ["std", "password-hash"] }
+base64 = "0.22.0"
+borsh = "1.2"
+chrono = { version = "0.4.19", default-features = false }
+log = "0.4"
+prost = "0.13.1"
+prost-types = "0.13.1"
+rand = "0.8"
+rcgen = "0.13.1"
+subtle = "2.5.0"
+thiserror = "1"
+tokio = { version = "1.36", features = ["fs", "rt-multi-thread"] }
+tonic = { version = "0.12.1", features = ["tls", "tls-roots"] }
+zeroize = "1"
+
+[build-dependencies]
+tonic-build = "0.12.1"
+
+[[bin]]
+name = "client"
+path = "src/bin/client.rs"
